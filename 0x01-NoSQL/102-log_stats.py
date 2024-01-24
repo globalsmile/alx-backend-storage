@@ -20,6 +20,15 @@ def main():
     print(f"\tmethod PATCH: {helper({'method': 'PATCH'})}")
     print(f"\tmethod DELETE: {helper({'method': 'DELETE'})}")
     print(f"{helper({'method': 'GET', 'path': '/status'})} status check")
+    print("IPs:")
+    pipeline = [
+        {"$group": {"_id": "$ip", "count": {"$sum": 1}}},
+        {"$sort": {"count": -1}},
+        {"$limit": 10}
+    ]
+    for i in client.logs.nginx.aggregate(pipeline):
+        print(f"\t{i.get('_id')}: {i.get('count')}")
+
 
 
 if __name__ == "__main__":
