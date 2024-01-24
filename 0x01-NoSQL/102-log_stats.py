@@ -1,3 +1,28 @@
+"""
+Improve 12-log_stats.py by adding the top 10 of the most present IPs in the collection nginx of the database logs:
+
+The IPs top must be sorted (like the example below)
+
+94778 logs
+Methods:
+    method GET: 93842
+    method POST: 229
+    method PUT: 0
+    method PATCH: 0
+    method DELETE: 0
+47415 status check
+IPs:
+    172.31.63.67: 15805
+    172.31.2.14: 15805
+    172.31.29.194: 15805
+    69.162.124.230: 529
+    64.124.26.109: 408
+    64.62.224.29: 217
+    34.207.121.61: 183
+    47.88.100.4: 166
+    45.249.84.250: 160
+    216.244.66.228: 150
+    """
 #!/usr/bin/env python3
 """Log stats"""
 from pymongo import MongoClient
@@ -26,9 +51,12 @@ def main():
         {"$sort": {"count": -1}},
         {"$limit": 10}
     ]
-    for i in client.logs.nginx.aggregate(pipeline):
-        print(f"\t{i.get('_id')}: {i.get('count')}")
-
+    client = MongoClient('mongodb://127.0.0.1:27017')
+    logs = client.logs.nginx
+    ips = logs.aggregate(pipeline)
+    for ip in ips:
+        print(f"\t{ip.get('_id')}: {ip.get('count')}")
+    logs.close()
 
 
 if __name__ == "__main__":
