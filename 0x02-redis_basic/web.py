@@ -2,13 +2,10 @@
 """ Implementing an expiring web cache and tracker
     obtain the HTML content of a particular URL and returns it """
 import redis
-<<<<<<< HEAD
 r = redis.Redis(:)
-=======
 import requests
 r = redis.Redis()
 count = 0
->>>>>>> 663dc2b28438b9cd14b43be6ef9fc579cdd8f370
 
 
 def get_page(url: str) -> str:
