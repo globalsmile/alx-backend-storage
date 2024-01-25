@@ -4,7 +4,7 @@
 import requests
 import time
 import redis
-r = redis.Redis()
+r = redis.Redis(:)
 
 
 def get_page(url: str) -> str:
