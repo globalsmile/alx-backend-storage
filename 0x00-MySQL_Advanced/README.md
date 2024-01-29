@@ -1,7 +1,7 @@
 # 0x0C. MySQL advanced
 :open_file_folder: Specializations - Web Stack programming ― Back-end  
 :bust_in_silhouette: by Guillaume Plessis, Senior Cloud & System Engineer at WeWork and Guillaume, CTO at Holberton school  
-:copyright: **[Holberton School](https://www.holbertonschool.com/)**  
+:copyright: **[ALX Africa](https://www.alxafrica.com/)**  
 :bookmark: 
 
 ## Resources
@@ -48,5 +48,5 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 * [x] 13. Average weighted score for all!
 
 ## Software engineer
-Javier Andrés Garzón Patarroyo  
-:octocat: [GitHub](https://github.com/javierandresgp/)
+Mohammed Badmus
+:octocat: [GitHub](https://github.com/globalsmile/)
