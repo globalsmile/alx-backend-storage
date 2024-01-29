@@ -2,7 +2,6 @@
 """ Implementing an expiring web cache and tracker
     obtain the HTML content of a particular URL and returns it """
 import redis
-r = redis.Redis(:)
 import requests
 r = redis.Redis()
 count = 0

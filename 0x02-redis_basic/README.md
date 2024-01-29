@@ -36,5 +36,5 @@ $ sed -i "s/bind .*/bind 127.0.0.1/g" /etc/redis/redis.conf
 * [x] 5. Implementing an expiring web cache and tracker
 
 ## Software engineer
-Javier Andrés Garzón Patarroyo  
-:octocat: [GitHub](https://github.com/javierandresgp/)
+Mohammed Badmus 
+:octocat: [GitHub](https://github.com/globalsmile/)
